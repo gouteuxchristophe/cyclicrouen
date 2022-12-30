@@ -1,0 +1,348 @@
+/* Polices utilisées */
+@font-face {
+    font-family: 'Arthur';
+    src: url("../P3_04_Fonts/Arthure.ttf") format("TrueType");
+    font-weight: normal;
+}   
+@font-face {
+    font-family: 'ComicNeue';
+    src: url("../P3_04_Fonts/ComicNeue-Regular.ttf") format("TrueType");
+    font-weight: normal;
+}
+
+body { /* Mise en page générale */
+    overflow-x: hidden;
+    font-family: 'ComicNeue', sans-serif;
+    width: 90%;
+    background-color: #fff8dc;
+    margin: 0 auto;
+}
+header { /* En-tête */
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 15px;
+}
+.titre {
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 15px;
+}
+h1 {
+    font-family: "Arthur";
+    font-size: 50px;
+    text-align: center;
+    margin: 0;
+}
+h2 {
+    text-align: center;
+    font-size: 4em;
+    margin: 0 auto;
+    margin-top: 10px;
+    color: whitesmoke;
+    text-shadow: 1px 1px 2px black;
+    font-family: 'ComicNeue'
+}
+h3, h4 {
+    text-align: center;
+}
+.fas, .fa, .fab {
+    font-size: 40px;
+    border: 1px solid white;
+    border-radius: 15px;
+    padding: 10px;
+    background-color: whitesmoke;
+}
+
+/* Diaporama */
+.diapo_conteneur, .diapo, .item {
+    width: 100%;
+    height: 426px;
+    margin: 0 auto; 
+}
+.diapo_conteneur {
+    overflow-x: hidden;
+}
+.diapo {
+    position: relative;
+}
+.diapo_nav { /* Navigation du diaporama */
+    position: absolute;
+    top: 45%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    opacity: 0;
+    transition: 1s linear;
+}
+.diapo_conteneur:hover .diapo_nav {
+    opacity: 1;
+    transition: 1s linear;
+}
+.button {
+    background-color: transparent;
+    border: none;
+}
+.item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 2s linear;
+    border-radius: 15px;
+}  
+.item.active {
+    opacity: 1;
+    transition: all 2s linear;
+}
+.img1, .img2, .img3, .img4, .img5, .img6, .img7 {
+    background-size: cover;
+}
+.img1 {
+    background-image: url("../P3_05_Images/velo_1.jpg");
+}
+.img2 {
+    background-image: url("../P3_05_Images/velo_2.jpg");
+}
+.img3 {
+    background-image: url("../P3_05_Images/velo_3.jpg");
+}
+.img4 {
+    background-image: url("../P3_05_Images/velo_4.jpg");
+}
+.img5 {
+    background-image: url("../P3_05_Images/velo_5.jpg");
+}
+.img6 {
+    background-image: url("../P3_05_Images/velo_6.jpg");
+}
+.img7 {
+    background-image: url("../P3_05_Images/velo_7.jpg");
+}
+
+.flexbox_carte_formulaire { /* Flexbox carte ville et formulaire réservation */
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+#carte_ville { /* Mise en page de la carte */
+    width: 50%;
+    height: 400px;
+}
+#formulaire_reservation { /* Mise en page du formulaire */
+    width: 40%;
+    height: 400px;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 15px;
+    background-color: whitesmoke;
+}
+.detail_station {
+    height: 200px;
+    text-align: left;
+    padding-left: 15px;
+}
+.detail_station input, textarea {
+    background-color: transparent;
+    border: none;
+    font-family: 'ComicNeue', sans-serif;
+}
+.label_adresse {
+    display: inline-block;
+    vertical-align: middle;
+    height: 46px;
+}
+#total_velo_dispo, #total_nbre_velo { /* Input nombre total de vélo et vélo dispo */
+    width: 10%;
+}
+#numero_station { /* Affichage number de la station */
+    display: none;
+}
+#adresse_station { 
+    width: 60%;
+    height: 60px;
+    vertical-align: top;
+}
+#reservation_button {
+    font-family: 'ComicNeue', sans-serif;
+    border: 2px solid black;
+    box-shadow: 8px 8px black;
+    border-radius: 15px;
+    font-size: 20px;
+    background-color: green;
+    color: white;
+    padding: 10px;
+}
+
+#erreur, #confirmation_resa_content, #timer {
+    border: none;
+    color: black;
+    background-color: transparent;
+    text-align: center;
+    width: 100%;
+}
+#erreur { /* Erreur bloc utilisateur réservation */
+    color: red;
+    font-weight: bold;
+}
+.flexbox_legende_signature { /* Flexbox légende et bloc signature */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 15px;
+    height: 50px;
+}
+.signature {
+    width: 320px;
+    height: 220px;
+    visibility: hidden;
+    border: 1px solid black;
+    border-radius: 15px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    background-color: whitesmoke;
+    text-align: center;
+}
+.flexbox_confirmation_resa {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.confirmation_resa {
+    visibility: hidden;
+    color: black;
+    height: 170px;
+    width: 100%;
+}
+.confirmation_resa_box1 {
+    width: 45%;
+}
+#confirmation_resa_content {
+    width: 100%;
+}
+#annul_resa {
+    border-radius: 15px;
+    padding: 10px;
+    margin-top: 15px;
+}
+.legende {
+    width: 50%;
+    text-align: center;
+}
+.legende img {
+    width: 5%;
+    margin-left: 10px;
+}
+
+footer { /* Mentions légales */
+    margin-top: 40px;
+    height: 50px;
+    width: 100%;
+    background-color: black;
+    color: whitesmoke;
+}
+footer h4 {
+    margin: 0 auto;
+    font-weight: normal;
+}
+.mention_legale {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+.link_mention {
+    color: white;
+    text-decoration: none;
+}
+
+/* Media queries */
+
+@media all and (max-width: 735px) {
+    .fas, .fa, .fab {
+        font-size: 30px;
+    }
+    h2 {
+        font-size: 2.5em;
+    }
+    .flexbox_carte_formulaire, .flexbox_legende_signature {
+        flex-direction: column;
+    }
+    #carte_ville {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    #formulaire_reservation {
+        margin: 0 auto;
+        width: 55%;
+    }
+    .legende {
+        position: relative;
+        top: -440px;
+        left: -75px;
+    }
+    .signature {
+        margin: 0 auto;
+    }
+    .flexbox_confirmation_resa {
+        flex-direction: column;
+    }
+    .confirmation_resa {
+        height: 300px;
+    }
+    .confirmation_resa_box1, .confirmation_resa_box3 {
+        margin: 0 auto;
+    }
+}
+
+@media all and (max-width: 615px) {
+    .fas, .fa, .fab {
+        font-size: 20px;
+    }
+    h1 {
+        font-size: 25px;
+    }
+    footer {
+        height: 100px;
+    }
+    .mention_legale {
+        display: flex;
+        flex-direction: column;
+    }
+    footer div{
+        margin: 0 auto;
+        padding-top: 5px;
+    }
+}
+
+@media all and (max-width: 521px) {
+    .useraccount {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+    h1 {
+        padding-top: 25px;
+    }
+    #formulaire_reservation {
+        width: 70%;
+    }
+}
+
+@media all and (max-width: 420px) {
+    .social {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+    .legende {
+        width: 80%;
+    }
+    #formulaire_reservation {
+        width: 100%;
+    }
+    .signature {
+        width: 300px;
+    }
+}

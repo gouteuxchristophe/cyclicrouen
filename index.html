@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="description" content="OpenClassRoom - Cy'clic Rouen">
+    <meta name="publisher" content="Christophe GOUTEUX" />
+    <meta name="robots" content="index,nofollow,nosnippet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../P3_04_Fonts/css/fontawesome.css" />
+    <script src="https://kit.fontawesome.com/75e1cd7def.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+        integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+        crossorigin=""></script>
+    <!-- Open Graph data -->
+    <meta property="og:title" content="OpenClassRoom Cy'clic Rouen" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:description" content="Location de vélo - Rouen" />
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@publisher_handle">
+    <meta name="twitter:title" content="OpenClassRoom - Cy'clic Rouen">
+    <meta name="twitter:description" content="Location de vélo - Rouen">
+    <meta name="twitter:creator" content="@author_handle">
+    <meta name="twitter:image:src" content="">
+    <title>OpenClassRoom - Cy'clic Rouen</title>
+</head>
+
+<body>
+
+    <div id="data"></div>
+
+    <header>
+
+        <div class="useraccount">
+            <!-- Bloc îcones utilisateurs login-->
+            <i class="fas fa-user"></i>
+            <i class="fas fa-user-plus"></i>
+        </div>
+
+        <div class="titre">
+            <h1>OpenClassRoom - Cy'clic Rouen</h1>
+        </div>
+
+        <div class="social">
+            <!-- Bloc îcones réseaux sociaux -->
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-facebook-square"></i>
+            <i class="fas fa-envelope"></i>
+        </div>
+
+    </header>
+
+    <section>
+        <!-- Diaporama -->
+
+        <div class="diapo_conteneur">
+            <div class="diapo">
+                <div class="item img1">
+                    <h2 class="diapo_content0"></h2>
+                </div>
+                <div class="item img2">
+                    <h2 class="diapo_content1"></h2>
+                </div>
+                <div class="item img3">
+                    <h2 class="diapo_content2"></h2>
+                </div>
+                <div class="item img4">
+                    <h2 class="diapo_content3"></h2>
+                </div>
+                <div class="item img5">
+                    <h2 class="diapo_content4"></h2>
+                </div>
+                <div class="item img6">
+                    <h2 class="diapo_content5"></h2>
+                </div>
+                <div class="item img7">
+                    <h2 class="diapo_content6"></h2>
+                </div>
+
+                <nav class="diapo_nav">
+                    <!-- Bloc navigation diaporamafle-->
+                    <button class="button prev_diapo"><i class="fas fa-angle-double-left"></i></button>
+                    <button class="button pause_diapo"><i class="fas fa-pause"></i></button>
+                    <button class="button next_diapo"><i class="fas fa-angle-double-right"></i></button>
+                </nav>
+            </div>
+        </div>
+
+    </section>
+
+    <article class="flexbox_carte_formulaire">
+        <!-- Bloc carte et formulaire-->
+
+        <div id="carte_ville"></div> <!-- Bloc fichier JSON-->
+
+        <form id=formulaire_reservation>
+            <!-- Formulaire complet-->
+
+            <div class="detail_station">
+                <!-- Informations sur la station-->
+                <h3>Détails de la réservation</h3>
+                <p>
+                    <input type='text' aria-label="numéro de la station" id="numero_station" name="numero_station">
+                </p>
+                <p>
+                    <label for="adresse_station" class="label_adresse">Adresse :</label>
+                    <textarea id="adresse_station" name="adresse_station"></textarea>
+                </p>
+                <p>
+                    <label for="total_nbre_velo">Nombre de vélo :</label>
+                    <input type='text' id="total_nbre_velo" name="numero station">
+                </p>
+                <p>
+                    <label for="total_velo_dispo"> Nombre de vélo disponible :</label>
+                    <input type='text' id="total_velo_dispo" name="numero station">
+                </p>
+            </div>
+            <div class="utilisateur_reservation">
+                <!-- Réservation utilisateur-->
+                <p>
+                    <label for="name">Nom :</label>
+                    <input type="text" id="name" name="name" required>
+                </p>
+                <p>
+                    <label for="prenom">Prénom :</label>
+                    <input type="text" id="prenom" name="prenom" required>
+                </p>
+                <p>
+                    <input type="text" aria-label="message d'erreur" id="erreur" name="erreur">
+                </p>
+                <p>
+                    <input type="button" aria-label="Bouton de réservation" id="reservation_button" name='reservation' value="Réservation">
+                </p>
+            </div>
+        </form>
+
+    </article>
+
+    <aside class="flexbox_legende_signature">
+        <!-- Bloc légende carte et bloc signature-->
+
+        <div class="legende">
+            <!-- Légende carte -->
+            <img class="marquerVert" src="../P3_05_Images/marqueurs/marker-icon-2x-green.png" title="Station ouverte"
+                alt="Marqueur vert">
+            <img class="marquerOrange" src="../P3_05_Images/marqueurs/marker-icon-2x-orange.png"
+                title="Derniers vélos disponibles" alt="Marqueur orange">
+            <img class="marquerRouge" src="../P3_05_Images/marqueurs/marker-icon-2x-red.png" title="Station fermée"
+                alt="Marqueur rouge">
+        </div>
+
+        <div class="signature">
+            <!-- Signature réservation-->
+            <h4>Signature :</h4>
+            <canvas class="canvas" height="150" width="300" onload='ini()'></canvas>
+            <input type="button" aria-label="Effacer le canva" id="reset" name="reset" value="Effacer">
+            <input type="button" aria-label="Valider le canva" id="validation" name="validation" value="Validation">
+            <input type="button" aria-label="Annuler le canva" id="annulation" name="annulation" value="Annuler">
+        </div>
+
+    </aside>
+
+    <div class="confirmation_resa">
+        <h3>Confirmation réservation</h3>
+        <div class='flexbox_confirmation_resa'>
+            <div class="confirmation_resa_box1">
+                <h4>Vélo disponible à la station suivante :</h4>
+                <input type="text" aria-label="Détail de la réservation" id="confirmation_resa_content" name="confirmation_resa_content">
+            </div>
+            <div>
+                <h4>Votre réservation expire <br> dans :</h4>
+                <input type="text" aria-label="Temps restant"id="timer" name="timer">
+            </div>
+            <div class="confirmation_resa_box3">
+                <input type="button" aria-label="Annulation de la réservation" id="annul_resa" name="annul_resa" value="Annuler ma réservation">
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="mention_legale">
+            <div>
+                <h4>- Ce site et son contenu sont purement fictif - <br>- Réalisation dans le cadre d'un projet
+                    OpenClassRoom -</h4>
+            </div>
+            <div>
+                <a class="link_mention" href="mentionlegales.html">Mentions Légales</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script type="module" crossorigin="anonymous" src="main.js"></script>
+
+</body>
+
+</html>
