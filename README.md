@@ -43,4 +43,4 @@
     height: 40px;" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/discord.svg" alt="sushiwie#1662"/></a>
 </div>
 
-![screenshoot](https://github.com/gouteuxchristophe/CyclicRouen/blob/cyclicrouen.png?raw=true)
+![screenshoot](https://github.com/gouteuxchristophe/CyclicRouen/blob/master/cyclicrouen.png?raw=true)
